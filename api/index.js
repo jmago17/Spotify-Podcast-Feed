@@ -10,7 +10,7 @@ module.exports = async (req, res) => {
       title: show.name,
       description: show.description,
       itunesSummary: show.description,
-      siteUrl: show.href,
+      siteUrl: show.external_urls.spotify,
       author: show.publisher,
       itunesAuthor: show.publisher,
       language: show.languages[0],
