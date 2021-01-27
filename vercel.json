@@ -3,6 +3,9 @@
   "rewrites": [
     { "source": "/:id", "destination": "/api/index" }
   ],
+  "redirects": [
+    { "source": "/", "destination": "https://github.com/ThisIsBenny/Spotify-Podcast-Feed", "permanent": false }
+  ],
   "headers": [
     {
       "source": "/(.*)",
