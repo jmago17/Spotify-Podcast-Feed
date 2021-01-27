@@ -1,0 +1,24 @@
+{
+  "name": "spotify-podcast-feed",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ThisIsBenny/Spotify-Podcast-Feed.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ThisIsBenny/Spotify-Podcast-Feed/issues"
+  },
+  "homepage": "https://github.com/ThisIsBenny/Spotify-Podcast-Feed#readme",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "micro": "^9.3.4",
+    "podcast": "^1.3.0"
+  }
+}

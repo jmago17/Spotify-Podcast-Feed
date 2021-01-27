@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "rewrites": [
+    { "source": "/:id", "destination": "/api/index" }
+  ],
+  "headers": [
+    {
+      "source": "/api",
+      "headers" : [
+        {
+          "key" : "Cache-Control",
+          "value" : "public, max-age=0, s-maxage=7200, stale-while-revalidate"
+        }
+      ]
+    }
+  ]
+}
