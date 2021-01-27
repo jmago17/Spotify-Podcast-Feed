@@ -2,14 +2,14 @@ import Podcast from 'podcast';
 const { send } = require('micro')
 const spotify = require('./_utils/spotify')
 
-const regex = new RegExp('foo*')
+const regex = new RegExp(/^\w{22}$/)
 
 module.exports = async (req, res) => {
   try {
     if (regex.test(req.query.id) === false) {
       throw new Error('Invalid show id')
     }
-    
+
     const show = await spotify.getShow(req.query.id)
 
     const feed = new Podcast({
