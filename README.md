@@ -2,7 +2,7 @@
 
 The service provides Spotify podcast as RSS feed which can be subscribed in any podcast app.
 
-Service-URL: `https://spotify-podcast-feed.vercel.app/[ID]`
+Service-URL: `https://spotify-podcast-feed.vercel.app/[Show-ID]`
 
 ## Usage
 
