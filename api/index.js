@@ -42,6 +42,7 @@ module.exports = async (req, res) => {
       })
     });
 
+    res.setHeader('Content-Type', 'application/rss+xml; charset=utf-8')
     res.end(feed.buildXml('\t'))
   } catch (err) {
     console.error(err)
