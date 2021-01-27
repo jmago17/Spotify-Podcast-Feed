@@ -5,11 +5,11 @@
   ],
   "headers": [
     {
-      "source": "/api",
+      "source": "/api/index.js",
       "headers" : [
         {
           "key" : "Cache-Control",
-          "value" : "public, max-age=0, s-maxage=7200, stale-while-revalidate"
+          "value" : "s-maxage=7200, stale-while-revalidate"
         }
       ]
     }

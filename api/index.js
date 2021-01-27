@@ -16,7 +16,6 @@ module.exports = async (req, res) => {
       language: show.languages[0],
       imageUrl: show.images[0].url,
       itunesImage: show.images[0].url,
-
       ttl: 7200,
       pubDate: new Date(show.episodes.items[0].release_date),
       generator: "Spotify-Podcast-Feed",
