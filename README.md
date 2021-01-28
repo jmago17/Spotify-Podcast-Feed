@@ -21,5 +21,9 @@ Both are provided after setting up an app in the [Developer Portal](http://devel
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2FThisIsBenny%2FSpotify-Podcast-Feed)
 
+## Troubleshooting
+### URL doesn't work in podcast app
+1. Some Spotify podcasts are limited to specific marketes (countries). You can add at the end of the url the parameter `market` with the country as [ ISO 3166-1 alpha-2 country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2). Èxample: `https://spotify-podcast-feed.vercel.app/1OLcQdw2PFDPG1jo3s0wbp?market=SE`.
+
 ## Credits
 * @Timdorr for the inspiration (https://github.com/timdorr/spotifeed)
