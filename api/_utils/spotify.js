@@ -33,10 +33,10 @@ getAccessToken = async () => {
   }
 }
 
-getShow = async (showID) => {
+getShow = async (showID, market) => {
   accessToken = await getAccessToken()
   try {
-    const { data } = await axios.get(`${baseURL}shows/${showID}?market=DE`, {
+    const { data } = await axios.get(`${baseURL}shows/${showID}?market=${market.toUpperCase()}`, {
       headers: {
         'Authorization': `Bearer ${accessToken}` 
       }
