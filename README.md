@@ -12,12 +12,7 @@ This url can be entered in any podcast app to subscribe the podcast.
 As iOS user, you can use this Shortcut to generate the Feed-URL via Share-Menu in the Spotify App: [Get Spotify-Podcast-Feed](https://www.icloud.com/shortcuts/759b8278b3794838bb5b9cd7ad3f343d)
 
 ## Host via Vercel
-If you like to host your own instance of this service via vercel.com, you have to set the following environment variables:
-
-* clientID
-* clientSecret
-
-Both are provided after setting up an app in the [Developer Portal](http://developer.spotify.com) of Spotify.
+If you like to host your own instance of this service via vercel.com, you can use this Button:
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2FThisIsBenny%2FSpotify-Podcast-Feed)
 
