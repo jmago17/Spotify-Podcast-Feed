@@ -9,8 +9,7 @@ module.exports = async (req, res) => {
     if (regex.test(req.query.id) === false) {
       throw new Error('Invalid show id')
     }
-
-    const show = await spotify.getShow(req.query.id)
+    const show = await spotify.getShow(req.query.id, req.query.market || 'DE')
 
     const feed = new Podcast({
       title: show.name,
