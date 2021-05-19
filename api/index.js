@@ -16,32 +16,33 @@ module.exports = async (req, res) => {
       title: show.name,
       description: show.description,
       itunesSummary: show.description,
-      siteUrl: show.external_urls.spotify,
-      author: show.publisher,
-      itunesAuthor: show.publisher,
-      language: show.languages[0],
-      imageUrl: show.images[0].url,
-      itunesImage: show.images[0].url,
+      // siteUrl: show.external_urls.spotify,
+      author: show.publisher.name,
+      itunesAuthor: show.publisher.name,
+      // language: show.languages[0],
+      imageUrl: show.coverArt.sources[2].url,
+      itunesImage: show.coverArt.sources[2].url,
       ttl: 7200,
-      pubDate: new Date(show.episodes.items[0].release_date),
+      pubDate: new Date(show.episodes.items[0].episode.releaseDate.isoString),
       generator: "Spotify-Podcast-Feed",
     })
 
-    show.episodes.items.forEach(element => {
-      const id = element['audio_preview_url'].substring(element['audio_preview_url'].lastIndexOf('/') + 1)
+    show.episodes.items.forEach(item => {
+      const element = item.episode
+      const audio = element.audio.items.find((i) => i.externallyHosted)
       feed.addItem({
         title: element.name,
         itunesTitle: element.name,
         description: element.description,
         itunesSummary: element.description,
-        url: `https://anon-podcast.scdn.co/${id}`,
+        url: audio.url,
         guid: element.uri,
-        date: new Date(element.release_date),
-        itunesDuration: element.duration_ms / 1000,
-        itunesImage: element.images[0].url,
+        date: new Date(element.releaseDate.isoString),
+        itunesDuration: element.duration.totalMilliseconds / 1000,
+        itunesImage: element.coverArt.sources[2].url,
         enclosure: {
-          url: `https://anon-podcast.scdn.co/${id}`,
-          duration: element.duration_ms / 1000,
+          url: audio.url,
+          duration: element.duration.totalMilliseconds / 1000,
           type: 'audio/mpeg'
         }
       })
