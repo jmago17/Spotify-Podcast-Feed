@@ -10,12 +10,12 @@ module.exports = async (req, res) => {
       throw new Error('Invalid show id')
     }
     const show = await spotify.getShow(req.query.id, req.query.market || 'DE')
-
+    console.log(show)
     const feed = new Podcast({
       title: show.name,
       description: show.description,
       itunesSummary: show.description,
-      // siteUrl: show.external_urls.spotify,
+      siteUrl: show.sharingInfo.shareUrl,
       author: show.publisher.name,
       itunesAuthor: show.publisher.name,
       // language: show.languages[0],
@@ -29,6 +29,7 @@ module.exports = async (req, res) => {
     show.episodes.items.forEach(item => {
       const element = item.episode
       const audio = element.audio.items.find((i) => i.externallyHosted)
+      console.log(element.duration.totalMilliseconds / 1000)
       feed.addItem({
         title: element.name,
         itunesTitle: element.name,
