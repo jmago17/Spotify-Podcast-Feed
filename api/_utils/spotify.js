@@ -1,15 +1,5 @@
 const axios = require('axios')
 const { createError } = require('micro')
-const querystring = require('querystring')
-
-const baseURL = 'https://api.spotify.com/v1/'
-
-const clientID = process.env.clientID
-const clientSecret = process.env.clientSecret
-
-if(!clientID || !clientSecret) {
-  throw new Error('Client ID or Secret missing')
-}
 
 getToken = async (id) => {
   try {
